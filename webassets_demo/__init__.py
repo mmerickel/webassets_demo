@@ -7,6 +7,7 @@ def static_assets(config):
 
     webassets_env = config.get_webassets_env()
     webassets_env.config['LESS_RUN_IN_DEBUG'] = False
+
     jinja2_env = config.get_jinja2_environment()
     jinja2_env.assets_environment = webassets_env
 
@@ -24,7 +25,7 @@ def static_assets(config):
         config.add_webasset('bootstrap_js', js)
 
         css = Bundle(
-            'bootstrap/less/bootstrap.less',
+            'bootstrap/less/*.less',
             filters='less',
             extra={'rel': 'stylesheet/less' if env.debug else 'stylesheet'},
             output='gen/bootstrap.css',
