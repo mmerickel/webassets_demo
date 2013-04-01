@@ -8,8 +8,10 @@ with open(os.path.join(here, 'README.txt')) as fp:
     README = fp.read()
 
 requires = [
+    'jsmin',
     'pyramid',
     'pyramid_debugtoolbar',
+    'pyramid_jinja2',
     'pyramid_webassets',
     'waitress',
 ]
