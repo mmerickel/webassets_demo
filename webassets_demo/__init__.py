@@ -25,7 +25,7 @@ def static_assets(config):
         config.add_webasset('bootstrap_js', js)
 
         css = Bundle(
-            'bootstrap/less/*.less',
+            'bootstrap/less/bootstrap.less',
             filters='less',
             extra={'rel': 'stylesheet/less' if env.debug else 'stylesheet'},
             output='gen/bootstrap.css',
